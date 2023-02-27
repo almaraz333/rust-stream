@@ -17,6 +17,7 @@ async fn main () -> Result<()>{
     // let mut line = String::new();
     
     while highgui::wait_key(1)? < 0 {
+        println!("GOING...");
         cam.read(&mut frame)?;
 
         // check whether VideoCapture still has frames to capture
