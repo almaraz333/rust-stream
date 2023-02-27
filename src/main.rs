@@ -9,6 +9,7 @@ async fn main () -> Result<()>{
     let mut frame = Mat::default();
 
     let (mut socket, _addr) = listener.accept().await.unwrap();
+    println!("YO");
 
     let (reader, mut writer) = socket.split();
     
@@ -16,7 +17,7 @@ async fn main () -> Result<()>{
     
     // let mut line = String::new();
     
-    while highgui::wait_key(1)? < 0 {
+    loop {
         println!("GOING...");
         cam.read(&mut frame)?;
 
